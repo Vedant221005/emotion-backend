@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# Update and install system packages (if needed for DeepFace / OpenCV)
+# Step 1: Install Python dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Step 2: Install system-level dependencies (for OpenCV / DeepFace)
 apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0
 
-# Optional: You can preload DeepFace models here (downloads will cache in Render build)
+# Step 3: Preload the DeepFace emotion model (optional)
 python -c "
 from deepface import DeepFace
 DeepFace.build_model('Emotion')
