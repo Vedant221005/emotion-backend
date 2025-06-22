@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Upgrade pip and install Python packages
-pip3 install --upgrade pip
-pip3 install -r requirements.txt
+# Upgrade pip and install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
 
-# Preload DeepFace emotion model
-python3 -c "from deepface import DeepFace; DeepFace.build_model('Emotion')"
+# (Optional) Preload DeepFace model
+python -c "from deepface import DeepFace; DeepFace.build_model('Emotion')"
